@@ -341,3 +341,51 @@ a[href^="tel:"], a[href^="sms:"] { white-space: nowrap; }
   .wave__line { stroke-dashoffset: 0; }
   .js [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* Announcement bar (collapses once you scroll) */
+.announce { margin: 0; height: 38px; display: flex; align-items: center; justify-content: center; gap: .4em; padding: 0 16px; background: var(--forest); color: var(--on-dark); font-size: .86rem; text-align: center; transition: margin-top .3s var(--ease); }
+.announce a { color: var(--sage); font-weight: 600; }
+.top.is-scrolled .announce { margin-top: -38px; }
+/* Blur lives on a pseudo-element so the fixed mobile menu isn't trapped inside the header */
+.top.is-scrolled { background: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.top::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(251, 250, 245, .9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); opacity: 0; transition: opacity .3s; }
+.top.is-scrolled::before { opacity: 1; }
+.hero { padding-top: 178px; }
+
+/* Ticker */
+.ticker { background: var(--sage-soft); overflow: hidden; padding: 6px 0 18px; }
+.ticker__track { display: flex; width: max-content; animation: ticker 48s linear infinite; }
+.ticker ul { display: flex; list-style: none; margin: 0; padding: 0; }
+.ticker li { font: italic 500 1.35rem/1 var(--serif); color: var(--bronze-dark); white-space: nowrap; padding: 0 28px; display: flex; align-items: center; gap: 56px; }
+.ticker li::after { content: "✦"; font-style: normal; font-size: .8rem; color: var(--sage-deep); margin-right: -28px; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* Skin goal finder */
+.finder { background: var(--paper); border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); margin-bottom: 56px; box-shadow: 0 24px 50px -36px rgba(46, 58, 34, .45); }
+.finder__title { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 18px; }
+.finder__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.finder__chips button { font: 600 .92rem/1 var(--sans); padding: 12px 18px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; transition: background-color .2s, border-color .2s, color .2s; }
+.finder__chips button:hover { border-color: var(--sage-deep); }
+.finder__chips button[aria-selected="true"] { background: var(--forest); border-color: var(--forest); color: var(--on-dark); }
+.finder__panel p { color: var(--muted); max-width: 40em; }
+.finder__recs { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0 0 24px; padding: 0; }
+.finder__recs a { display: inline-flex; align-items: center; gap: .5em; padding: 10px 16px; border-radius: 14px; background: var(--sage-soft); color: var(--forest); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.finder__recs a::after { content: "→"; color: var(--sage-deep); transition: transform .2s; }
+.finder__recs a:hover::after { transform: translateX(3px); }
+.menu-head { font-size: 1.5rem; margin-bottom: 16px; scroll-margin-top: 100px; }
+.reviews__more { text-align: center; margin: 34px 0 0; }
+
+@media (max-width: 960px) {
+  .hero { padding-top: 154px; }
+}
+@media (max-width: 600px) {
+  .announce { font-size: .78rem; }
+  .hero { padding-top: 150px; }
+  .ticker li { font-size: 1.15rem; }
+  .finder__chips button { padding: 10px 14px; font-size: .86rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none !important; width: auto; flex-wrap: wrap; justify-content: center; }
+  .ticker ul[aria-hidden] { display: none; }
+  .ticker ul { flex-wrap: wrap; justify-content: center; row-gap: 12px; }
+}

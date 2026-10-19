@@ -42,6 +42,7 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="top" data-top>
+    <p class="announce">New here? Your first skin consultation is free. <a href="sms:+19254007263">Text us to book</a></p>
     <div class="top__inner">
       <a class="brand" href="#top"><img src="assets/img/logo.webp" width="900" height="311" alt="Nlighten Skin Care &amp; Spa"></a>
       <nav class="nav" aria-label="Main">
@@ -96,6 +97,14 @@
       </svg>
     </section>
 
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker__track">
+        <ul><li>Free skin consultation</li><li>Open 7 days a week</li><li>Olivia Quido official distributor</li><li>Follow-up after every visit</li><li>Facials, peels &amp; body care</li><li>Inside Seasons Marketplace, Milpitas</li></ul>
+        <ul aria-hidden="true"><li>Free skin consultation</li><li>Open 7 days a week</li><li>Olivia Quido official distributor</li><li>Follow-up after every visit</li><li>Facials, peels &amp; body care</li><li>Inside Seasons Marketplace, Milpitas</li></ul>
+      </div>
+    </div>
+
     <!-- TREATMENTS -->
     <section class="section section--sage" id="treatments" aria-labelledby="treat-title">
       <div class="wrap">
@@ -105,6 +114,49 @@
           <p class="section__lead">Not sure what you need? Every first visit can start with a free consultation, and Ping will suggest where to begin.</p>
         </div>
 
+        <div class="finder" data-reveal>
+          <h3 class="finder__title">What would you like to work on?</h3>
+          <div class="finder__chips" role="tablist" aria-label="Skin goals" data-tabs>
+          <button role="tab" id="goal-acne" aria-controls="goal-panel-acne" aria-selected="true">Acne &amp; breakouts</button>
+          <button role="tab" id="goal-tone" aria-controls="goal-panel-tone" aria-selected="false" tabindex="-1">Dark spots &amp; uneven tone</button>
+          <button role="tab" id="goal-lines" aria-controls="goal-panel-lines" aria-selected="false" tabindex="-1">Fine lines &amp; firmness</button>
+          <button role="tab" id="goal-texture" aria-controls="goal-panel-texture" aria-selected="false" tabindex="-1">Texture, pores &amp; scars</button>
+          <button role="tab" id="goal-glow" aria-controls="goal-panel-glow" aria-selected="false" tabindex="-1">Sensitive skin or a refresh</button>
+          <button role="tab" id="goal-body" aria-controls="goal-panel-body" aria-selected="false" tabindex="-1">Body contouring</button>
+          <button role="tab" id="goal-underarm" aria-controls="goal-panel-underarm" aria-selected="false" tabindex="-1">Underarms &amp; back</button>
+          </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-acne" aria-labelledby="goal-acne">
+          <p>Calm active breakouts and keep pores clear. A series works best for acne. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Pure Oxygen Acne Treatment</a></li><li><a href="#full-menu" data-goto="tab-resurface">Salicylic Acid peel</a></li><li><a href="#packages">Acne Treatment Plus package</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-tone" aria-labelledby="goal-tone" hidden>
+          <p>Fade discoloration and bring back an even, bright tone. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Whitening Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Mango &amp; Pumpkin peel</a></li><li><a href="#full-menu" data-goto="tab-facials">Skin Bright Chemical Peel</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-lines" aria-labelledby="goal-lines" hidden>
+          <p>Lift, plump and boost collagen without needles or downtime. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Facial Contour with Bio Lift</a></li><li><a href="#full-menu" data-goto="tab-facials">Oxygen Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Power Peptide peel</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-texture" aria-labelledby="goal-texture" hidden>
+          <p>Smooth rough texture, refine pores and soften acne scars. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Collagen Skin Rejuvenation</a></li><li><a href="#full-menu" data-goto="tab-facials">Microdermabrasion</a></li><li><a href="#full-menu" data-goto="tab-resurface">Glycolic Acid peel</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-glow" aria-labelledby="goal-glow" hidden>
+          <p>A gentle deep clean and hydration to get your glow back. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Nlighten Signature Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Lactic Acid peel</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-body" aria-labelledby="goal-body" hidden>
+          <p>Tighten and tone stubborn areas without surgery. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-body">Body Contour / Cavitation</a></li><li><a href="#full-menu" data-goto="tab-body">Body Wrap</a></li><li><a href="#full-menu" data-goto="tab-body">Body Detox</a></li></ul>
+        </div>
+        <div class="finder__panel" role="tabpanel" id="goal-panel-underarm" aria-labelledby="goal-underarm" hidden>
+          <p>Brighten dark underarms and clear back breakouts. Ping usually suggests:</p>
+          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-body">Underarm Brightening</a></li><li><a href="#full-menu" data-goto="tab-body">Back Facial</a></li></ul>
+        </div>
+          <a class="btn btn--primary btn--sm finder__cta" href="#book">Book a free consultation</a>
+        </div>
+
+        <h3 class="menu-head" id="full-menu">Or browse the full menu</h3>
         <div class="menu-tabs" role="tablist" aria-label="Treatment types" data-tabs>
           <button role="tab" id="tab-facials" aria-controls="panel-facials" aria-selected="true">Age-defying facials</button>
           <button role="tab" id="tab-resurface" aria-controls="panel-resurface" aria-selected="false" tabindex="-1">Resurfacing peels</button>
@@ -290,6 +342,7 @@
           <figure class="review" data-reveal><blockquote><p>Ping noticed my acne scars along with my active acne. She explains everything as she goes, and it really calmed me down.</p></blockquote><figcaption>Carmen F. · Yelp</figcaption></figure>
           <figure class="review" data-reveal><blockquote><p>The next day, Ping followed up on how my skin was doing. Such a great gesture.</p></blockquote><figcaption>May G. · Yelp</figcaption></figure>
         </div>
+        <p class="reviews__more" data-reveal><a class="btn btn--ghost" href="https://www.yelp.com/biz/nlighten-skin-care-and-spa-milpitas-2" target="_blank" rel="noopener">Read more reviews on Yelp</a></p>
       </div>
     </section>
 

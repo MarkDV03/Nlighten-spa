@@ -48,25 +48,37 @@
     document.addEventListener('visibilitychange', sync);
   }
 
-  // Treatment tabs (arrow keys move between tabs)
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs] [role="tab"]'));
-  function select(tab, focus) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute('aria-selected', on);
-      t.tabIndex = on ? 0 : -1;
-      var panel = document.getElementById(t.getAttribute('aria-controls'));
-      panel.hidden = !on;
-      panel.classList.toggle('is-in', on && !reduced);
+  // Tabs: the skin goal finder and the treatment menu (arrow keys move between tabs)
+  function setupTabs(group) {
+    var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        panel.classList.toggle('is-in', on && !reduced);
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (n) { e.preventDefault(); select(tabs[(i + n + tabs.length) % tabs.length], true); }
+      });
+      t._select = select;
     });
-    if (focus) tab.focus();
   }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { select(t); });
-    t.addEventListener('keydown', function (e) {
-      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (n) { e.preventDefault(); select(tabs[(i + n + tabs.length) % tabs.length], true); }
-    });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tabs]'), setupTabs);
+
+  // Finder suggestions open the matching tab of the full menu
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-goto]');
+    if (!link) return;
+    var tab = document.getElementById(link.getAttribute('data-goto'));
+    if (tab && tab._select) tab._select(tab);
   });
 
   // Booking form: design only until it's connected to a form service (e.g. Formspree)
