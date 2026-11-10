@@ -481,3 +481,17 @@ a[href^="tel:"], a[href^="sms:"] { white-space: nowrap; }
 }
 @media (prefers-reduced-motion: reduce) { .secbar, .secbar a { transition: none; } }
 @media (max-width: 860px) { html { scroll-padding-top: 132px; } }
+
+/* v6 spacing: more room under each category title, smaller treatment text */
+.cat__title { margin-bottom: 20px; }
+.cat + .cat { margin-top: clamp(16px, 3vw, 32px); }
+.cat__list h4 { font-size: 1.12rem; margin-bottom: 3px; }
+.cat__list p { font-size: .88rem; line-height: 1.5; }
+.svc-txt { padding: 14px 16px 16px; }
+@media (max-width: 560px) {
+  .cat__title { font-size: 1.7rem; margin-bottom: 16px; }
+  .cat__list h4 { font-size: 1.05rem; }
+  .cat__list p { font-size: .84rem; }
+  .svc-txt { padding: 12px 14px; }
+  .svc-ph { width: 84px; }
+}
