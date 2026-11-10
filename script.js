@@ -113,18 +113,27 @@
   // Highlight the menu link for the section on screen
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('#menu a[href^="#"]:not(.btn)'));
-    var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
-    if (!links.length) return;
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.secbar a'));
+    var secs = chips.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    var bar = document.querySelector('.secbar'), last = -2;
+    if (!chips.length) return;
     var ticking = false;
     function update() {
       ticking = false;
       var line = window.innerHeight * 0.35, cur = -1;
       secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) cur = i; });
-      var bookTop = document.getElementById('book');
-      if (cur === links.length - 1 && bookTop && bookTop.getBoundingClientRect().top <= line) cur = -1;
-      links.forEach(function (a, i) {
+      var id = cur >= 0 ? chips[cur].getAttribute('href') : '';
+      links.forEach(function (a) {
+        if (a.getAttribute('href') === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      chips.forEach(function (a, i) {
         if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
       });
+      if (cur !== last && cur >= 0 && bar && bar.scrollWidth > bar.clientWidth) {
+        var c = chips[cur];
+        bar.scrollTo({ left: c.offsetLeft - (bar.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' });
+      }
+      last = cur;
     }
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     window.addEventListener('resize', update);
