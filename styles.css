@@ -468,3 +468,16 @@ a[href^="tel:"], a[href^="sms:"] { white-space: nowrap; }
 .svc-ph:has(img) { position: relative; padding: 0; }
 .svc-ph:has(img) img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .svc-ph:has(img[src*="product-"]) img { object-fit: contain; background: var(--cream); }
+
+/* Phone: section bar under the header that lights up the current section */
+.secbar { display: none; }
+@media (max-width: 860px) {
+  .secbar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 0 max(16px, env(safe-area-inset-left, 0px)) 10px; max-height: 0; opacity: 0; transition: max-height .3s var(--ease), opacity .3s; }
+  .secbar::-webkit-scrollbar { display: none; }
+  .top.is-scrolled .secbar { max-height: 60px; opacity: 1; }
+  .secbar a { flex: none; font: 600 .85rem/1 var(--sans); color: var(--muted); text-decoration: none; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); transition: background-color .25s, color .25s, border-color .25s; }
+  .secbar a[aria-current="true"] { background: var(--forest); border-color: var(--forest); color: var(--on-dark); }
+  .jump { position: static; margin: 0 0 28px; padding: 0; background: none; }
+}
+@media (prefers-reduced-motion: reduce) { .secbar, .secbar a { transition: none; } }
+@media (max-width: 860px) { html { scroll-padding-top: 132px; } }
