@@ -109,4 +109,25 @@
 
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
+
+  // Highlight the menu link for the section on screen
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('#menu a[href^="#"]:not(.btn)'));
+    var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    if (!links.length) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.35, cur = -1;
+      secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) cur = i; });
+      var bookTop = document.getElementById('book');
+      if (cur === links.length - 1 && bookTop && bookTop.getBoundingClientRect().top <= line) cur = -1;
+      links.forEach(function (a, i) {
+        if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
 })();
