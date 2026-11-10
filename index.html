@@ -121,74 +121,42 @@
           <p class="section__lead">Not sure what you need? Every first visit can start with a free consultation, and Ping will suggest where to begin.</p>
         </div>
 
-        <div class="finder" data-reveal>
-          <h3 class="finder__title">What would you like to work on?</h3>
-          <div class="finder__chips" role="tablist" aria-label="Skin goals" data-tabs>
-          <button role="tab" id="goal-acne" aria-controls="goal-panel-acne" aria-selected="true">Acne &amp; breakouts</button>
-          <button role="tab" id="goal-tone" aria-controls="goal-panel-tone" aria-selected="false" tabindex="-1">Dark spots &amp; uneven tone</button>
-          <button role="tab" id="goal-lines" aria-controls="goal-panel-lines" aria-selected="false" tabindex="-1">Fine lines &amp; firmness</button>
-          <button role="tab" id="goal-texture" aria-controls="goal-panel-texture" aria-selected="false" tabindex="-1">Texture, pores &amp; scars</button>
-          <button role="tab" id="goal-glow" aria-controls="goal-panel-glow" aria-selected="false" tabindex="-1">Sensitive skin or a refresh</button>
-          <button role="tab" id="goal-body" aria-controls="goal-panel-body" aria-selected="false" tabindex="-1">Body contouring</button>
-          <button role="tab" id="goal-underarm" aria-controls="goal-panel-underarm" aria-selected="false" tabindex="-1">Underarms &amp; back</button>
+        <nav class="jump" aria-label="Treatment types">
+          <a href="#cat-facials">Age-defying facials</a>
+          <a href="#cat-peels">Resurfacing peels</a>
+          <a href="#cat-body">Body treatments &amp; more</a>
+        </nav>
+
+        <div class="cat" id="cat-facials" data-reveal>
+          <figure class="cat__photo"><img src="assets/img/treatment-room-chair.webp" width="720" height="960" alt="A private facial room at Nlighten with a treatment chair and magnifying lamp" loading="lazy" decoding="async"><figcaption>One of our private treatment rooms</figcaption></figure>
+          <div class="cat__body">
+            <h3 class="cat__title">Age-defying facials</h3>
+            <ul class="cat__list">
+              <li><h4>Nlighten Signature Facial</h4><p>Deep pore cleansing and intense hydration, removal of blackheads and whiteheads, finished with a mask.</p></li>
+              <li><h4>Microdermabrasion</h4><p>Diamond resurfacing for a smoother texture and more even skin tone.</p></li>
+              <li><h4>Oxygen Facial</h4><p>Delivers oxygen and collagen to moisturize, smooth, lift and plump tired, aging skin.</p></li>
+              <li><h4>Whitening Facial</h4><p>An intense brightening facial with ultrasonic photo-light therapy and a brightening serum infusion.</p></li>
+              <li><h4>Facial Contour with Bio Lift</h4><p>A non-invasive facial lift that infuses serum using high-frequency RF.</p></li>
+              <li><h4>Pure Oxygen Acne Treatment</h4><p>Oxygenating, anti-microbial care that clears congestion, combined with glycolic, salicylic and lactic acids.</p></li>
+              <li><h4>Skin Bright Chemical Peel</h4><p>Brightens skin tone and fades discoloration for a more youthful look after treatment.</p></li>
+              <li><h4>Collagen Skin Rejuvenation</h4><p>Microneedling to smooth texture, refine pores and soften acne scars over a series of visits.</p></li>
+            </ul>
           </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-acne" aria-labelledby="goal-acne">
-          <p>Calm active breakouts and keep pores clear. A series works best for acne. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Pure Oxygen Acne Treatment</a></li><li><a href="#full-menu" data-goto="tab-resurface">Salicylic Acid peel</a></li><li><a href="#packages">Acne Treatment Plus package</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-tone" aria-labelledby="goal-tone" hidden>
-          <p>Fade discoloration and bring back an even, bright tone. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Whitening Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Mango &amp; Pumpkin peel</a></li><li><a href="#full-menu" data-goto="tab-facials">Skin Bright Chemical Peel</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-lines" aria-labelledby="goal-lines" hidden>
-          <p>Lift, plump and boost collagen without needles or downtime. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Facial Contour with Bio Lift</a></li><li><a href="#full-menu" data-goto="tab-facials">Oxygen Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Power Peptide peel</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-texture" aria-labelledby="goal-texture" hidden>
-          <p>Smooth rough texture, refine pores and soften acne scars. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Collagen Skin Rejuvenation</a></li><li><a href="#full-menu" data-goto="tab-facials">Microdermabrasion</a></li><li><a href="#full-menu" data-goto="tab-resurface">Glycolic Acid peel</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-glow" aria-labelledby="goal-glow" hidden>
-          <p>A gentle deep clean and hydration to get your glow back. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-facials">Nlighten Signature Facial</a></li><li><a href="#full-menu" data-goto="tab-resurface">Lactic Acid peel</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-body" aria-labelledby="goal-body" hidden>
-          <p>Tighten and tone stubborn areas without surgery. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-body">Body Contour / Cavitation</a></li><li><a href="#full-menu" data-goto="tab-body">Body Wrap</a></li><li><a href="#full-menu" data-goto="tab-body">Body Detox</a></li></ul>
-        </div>
-        <div class="finder__panel" role="tabpanel" id="goal-panel-underarm" aria-labelledby="goal-underarm" hidden>
-          <p>Brighten dark underarms and clear back breakouts. Ping usually suggests:</p>
-          <ul class="finder__recs"><li><a href="#full-menu" data-goto="tab-body">Underarm Brightening</a></li><li><a href="#full-menu" data-goto="tab-body">Back Facial</a></li></ul>
-        </div>
-          <a class="btn btn--primary btn--sm finder__cta" href="#book">Book a free consultation</a>
         </div>
 
-        <h3 class="menu-head" id="full-menu">Or browse the full menu</h3>
-        <div class="menu-tabs" role="tablist" aria-label="Treatment types" data-tabs>
-          <button role="tab" id="tab-facials" aria-controls="panel-facials" aria-selected="true">Age-defying facials</button>
-          <button role="tab" id="tab-resurface" aria-controls="panel-resurface" aria-selected="false" tabindex="-1">Resurfacing peels</button>
-          <button role="tab" id="tab-body" aria-controls="panel-body" aria-selected="false" tabindex="-1">Body &amp; problem solvers</button>
-        </div>
-
-        <div class="menu-panel" role="tabpanel" id="panel-facials" aria-labelledby="tab-facials">
-          <article class="svc"><h3>Nlighten Signature Facial</h3><p>Deep pore cleansing and intense hydration, removal of blackheads and whiteheads, finished with a mask.</p></article>
-          <article class="svc"><h3>Microdermabrasion</h3><p>Diamond resurfacing for a smoother texture and more even skin tone.</p></article>
-          <article class="svc"><h3>Oxygen Facial</h3><p>Delivers oxygen and collagen to moisturize, smooth, lift and plump tired, aging skin.</p></article>
-          <article class="svc"><h3>Whitening Facial</h3><p>An intense brightening facial with ultrasonic photo-light therapy and a brightening serum infusion.</p></article>
-          <article class="svc"><h3>Facial Contour with Bio Lift</h3><p>A non-invasive facial lift that infuses serum using high-frequency RF.</p></article>
-          <article class="svc"><h3>Pure Oxygen Acne Treatment</h3><p>Oxygenating, anti-microbial care that clears congestion, combined with glycolic, salicylic and lactic acids.</p></article>
-          <article class="svc"><h3>Skin Bright Chemical Peel</h3><p>Brightens skin tone and fades discoloration for a more youthful look after treatment.</p></article>
-          <article class="svc"><h3>Collagen Skin Rejuvenation</h3><p>Microneedling to smooth texture, refine pores and soften acne scars over a series of visits.</p></article>
-        </div>
-
-        <div class="menu-panel" role="tabpanel" id="panel-resurface" aria-labelledby="tab-resurface" hidden>
-          <article class="svc"><h3>Salicylic Acid</h3><p>An antibacterial treatment to control inflammation and acne.</p></article>
-          <article class="svc"><h3>Lactic Acid</h3><p>Gentle hydrating and exfoliating treatment for sensitive skin.</p></article>
-          <article class="svc"><h3>Glycolic Acid 1 &amp; 2</h3><p>A blend of anti-aging ingredients to renew dull skin.</p></article>
-          <article class="svc"><h3>Mango &amp; Pumpkin</h3><p>Brightening and blemish control that targets age spots and pigmentation.</p></article>
-          <article class="svc"><h3>Power Peptide</h3><p>Repairs UV damage and boosts collagen and elastin.</p></article>
-          <aside class="benefits" aria-labelledby="peel-title">
-            <h3 id="peel-title">Benefits of a peel</h3>
+        <div class="cat cat--flip" id="cat-peels" data-reveal>
+          <figure class="cat__photo"><img src="assets/img/product-toner.webp" width="560" height="700" alt="Olivia Quido Balancing Toner, one of the clinical skin care lines used at Nlighten" loading="lazy" decoding="async"><figcaption>Olivia Quido clinical skin care</figcaption></figure>
+          <div class="cat__body">
+            <h3 class="cat__title">Resurfacing peels</h3>
+            <ul class="cat__list">
+              <li><h4>Salicylic Acid</h4><p>An antibacterial treatment to control inflammation and acne.</p></li>
+              <li><h4>Lactic Acid</h4><p>Gentle hydrating and exfoliating treatment for sensitive skin.</p></li>
+              <li><h4>Glycolic Acid 1 &amp; 2</h4><p>A blend of anti-aging ingredients to renew dull skin.</p></li>
+              <li><h4>Mango &amp; Pumpkin</h4><p>Brightening and blemish control that targets age spots and pigmentation.</p></li>
+              <li><h4>Power Peptide</h4><p>Repairs UV damage and boosts collagen and elastin.</p></li>
+            </ul>
+            <aside class="benefits" aria-labelledby="peel-title">
+            <h4 id="peel-title">Benefits of a peel</h4>
             <ul>
               <li>Improves skin texture</li>
               <li>Removes dead skin cells</li>
@@ -200,19 +168,27 @@
               <li>Fades surface pigmentation</li>
             </ul>
           </aside>
+          </div>
         </div>
 
-        <div class="menu-panel" role="tabpanel" id="panel-body" aria-labelledby="tab-body" hidden>
-          <article class="svc"><h3>Body Contour / Cavitation</h3><p>Safe, non-invasive targeting of fat cells and cellulite to tighten and tone.</p></article>
-          <article class="svc"><h3>Body Scrub</h3><p>Removes dead skin, improves circulation, smooths the look of cellulite and hydrates.</p></article>
-          <article class="svc"><h3>Body Wrap</h3><p>A purifying treatment with masks and essential oils. A brightening wrap is also available.</p></article>
-          <article class="svc"><h3>Body Detox</h3><p>A detox wrap that helps tone and firm skin and boost circulation. Best as a series.</p></article>
-          <article class="svc"><h3>Underarm Brightening</h3><p>Lightens discoloration with a brightening treatment or chemical peel.</p></article>
-          <article class="svc"><h3>Back Facial</h3><p>Thorough exfoliation and deep cleansing to clear blemishes on the back.</p></article>
-          <article class="svc"><h3>Paraffin for Hands or Feet</h3><p>Rejuvenates dry, tired hands and feet.</p></article>
-          <article class="svc"><h3>LamProbe</h3><p>Quick removal of skin tags and small skin irregularities, with numbing cream for comfort.</p></article>
-          <article class="svc svc--wide"><h3>Waxing</h3><p>Eyebrow, chin, upper or lower lip, arms, underarms, full or half leg, chest, back, bikini and Brazilian.</p></article>
+        <div class="cat" id="cat-body" data-reveal>
+          <figure class="cat__photo"><img src="assets/img/body-contour-before-after.webp" width="533" height="329" alt="Before and after photos of a body contour treatment at Nlighten" loading="lazy" decoding="async"><figcaption>Body contour: before and after</figcaption></figure>
+          <div class="cat__body">
+            <h3 class="cat__title">Body treatments &amp; more</h3>
+            <ul class="cat__list">
+              <li><h4>Body Contour / Cavitation</h4><p>Safe, non-invasive targeting of fat cells and cellulite to tighten and tone.</p></li>
+              <li><h4>Body Scrub</h4><p>Removes dead skin, improves circulation, smooths the look of cellulite and hydrates.</p></li>
+              <li><h4>Body Wrap</h4><p>A purifying treatment with masks and essential oils. A brightening wrap is also available.</p></li>
+              <li><h4>Body Detox</h4><p>A detox wrap that helps tone and firm skin and boost circulation. Best as a series.</p></li>
+              <li><h4>Underarm Brightening</h4><p>Lightens discoloration with a brightening treatment or chemical peel.</p></li>
+              <li><h4>Back Facial</h4><p>Thorough exfoliation and deep cleansing to clear blemishes on the back.</p></li>
+              <li><h4>Paraffin for Hands or Feet</h4><p>Rejuvenates dry, tired hands and feet.</p></li>
+              <li><h4>LamProbe</h4><p>Quick removal of skin tags and small skin irregularities, with numbing cream for comfort.</p></li>
+              <li><h4>Waxing</h4><p>Eyebrow, chin, upper or lower lip, arms, underarms, full or half leg, chest, back, bikini and Brazilian.</p></li>
+            </ul>
+          </div>
         </div>
+
         <p class="note">Call or text for current prices. <span class="ph">[Add prices if the owner wants them shown]</span></p>
       </div>
     </section>
