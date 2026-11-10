@@ -458,3 +458,13 @@ a[href^="tel:"], a[href^="sms:"] { white-space: nowrap; }
 .timeline h3 { color: var(--on-dark); font-size: 1.45rem; margin: 0 0 6px; }
 .timeline p { margin: 0; color: var(--muted-dark); max-width: 34em; }
 @media (max-width: 860px) { .journey { grid-template-columns: 1fr; } .journey__head { position: static; } }
+
+/* Active menu link while scrolling */
+.nav__links a:not(.btn) { position: relative; transition: color .25s; }
+.nav__links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: var(--bronze); transform: scaleX(0); transition: transform .3s var(--ease); }
+.nav__links a[aria-current="true"] { color: var(--bronze); font-weight: 600; }
+.nav__links a[aria-current="true"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .nav__links a:not(.btn)::after { transition: none; } }
+.svc-ph:has(img) { position: relative; padding: 0; }
+.svc-ph:has(img) img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.svc-ph:has(img[src*="product-"]) img { object-fit: contain; background: var(--cream); }
